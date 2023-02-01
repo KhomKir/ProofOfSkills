@@ -1,0 +1,19 @@
+Bug Tracking Systems: Jira, Bugzilla, Trello, etc.
+
+Test Case Management Tools: TestRail, Zephyr, qTest, etc.
+
+Screen Capture and Video Recording Tools: Loom, Camtasia, etc.
+
+Virtual Machine Emulators: VirtualBox, VMware, etc.
+
+Test Data Generation Tools: Faker, Bogus, etc.
+
+Performance Testing Tools: Apache JMeter, LoadRunner, etc.
+
+API Testing Tools: Postman, SoapUI, etc.
+
+Code Review Tools: Crucible, Phabricator, etc.
+
+Cross-Browser Testing Tools: BrowserStack, Sauce Labs, etc.
+
+Mobile Testing Tools: Appium, MonkeyTalk, etc.
