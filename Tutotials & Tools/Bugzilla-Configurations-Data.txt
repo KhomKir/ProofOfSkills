@@ -1,25 +1,25 @@
-CREATE DATABASE `bugzilla`
+CREATE DATABASE `bugzillaz`
 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE USER 'bugzilla-owner'@'localhost';
-CREATE USER 'bugzilla-owner'@'127.0.0.1';
-CREATE USER 'bugzilla-owner'@'::1';
+CREATE USER 'bugzillaz-owner'@'localhost';
+CREATE USER 'bugzillaz-owner'@'127.0.0.1';
+CREATE USER 'bugzillaz-owner'@'::1';
 
 SET PASSWORD
-FOR 'bugzilla-owner'@'localhost' = PASSWORD('BiINinS#23');
+FOR 'bugzillaz-owner'@'localhost' = PASSWORD('BiINinS#23');
 SET PASSWORD
-FOR 'bugzilla-owner'@'127.0.0.1' = PASSWORD('BiINinS#23');
+FOR 'bugzillaz-owner'@'127.0.0.1' = PASSWORD('BiINinS#23');
 SET PASSWORD
-FOR 'bugzilla-owner'@'::1' = PASSWORD('BiINinS#23');
+FOR 'bugzillaz-owner'@'::1' = PASSWORD('BiINinS#23');
 
 
 
 GRANT ALL PRIVILEGES ON
-`bugzilla`.* TO 'bugzilla-owner'@'localhost' WITH GRANT OPTION;
+`bugzillaz`.* TO 'bugzillaz-owner'@'localhost' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON
-`bugzilla`.* TO 'bugzilla-owner'@'127.0.0.1' WITH GRANT OPTION;
+`bugzillaz`.* TO 'bugzillaz-owner'@'127.0.0.1' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON
-`bugzilla`.* TO 'bugzilla-owner'@'::1' WITH GRANT OPTION;
+`bugzillaz`.* TO 'bugzillaz-owner'@'::1' WITH GRANT OPTION;
 
 =============================================================================
 https://bugzilla.readthedocs.io/en/latest/installing/moving.html
