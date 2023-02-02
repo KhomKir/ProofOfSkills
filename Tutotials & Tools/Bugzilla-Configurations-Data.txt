@@ -1,0 +1,57 @@
+CREATE DATABASE `bugzilla`
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE USER 'bugzilla-owner'@'localhost';
+CREATE USER 'bugzilla-owner'@'127.0.0.1';
+CREATE USER 'bugzilla-owner'@'::1';
+
+SET PASSWORD
+FOR 'bugzilla-owner'@'localhost' = PASSWORD('BiINinS#23');
+SET PASSWORD
+FOR 'bugzilla-owner'@'127.0.0.1' = PASSWORD('BiINinS#23');
+SET PASSWORD
+FOR 'bugzilla-owner'@'::1' = PASSWORD('BiINinS#23');
+
+
+
+GRANT ALL PRIVILEGES ON
+`bugzilla`.* TO 'bugzilla-owner'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON
+`bugzilla`.* TO 'bugzilla-owner'@'127.0.0.1' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON
+`bugzilla`.* TO 'bugzilla-owner'@'::1' WITH GRANT OPTION;
+
+=============================================================================
+https://bugzilla.readthedocs.io/en/latest/installing/moving.html
+
+
+Add below lines in httpd.conf
+
+Alias "/bugzilla/" "C:/bugzilla/"
+<Directory "C:/bugzilla">
+    ScriptInterpreterSource Registry-Strict
+    Options +ExecCGI +FollowSymLinks
+    DirectoryIndex index.cgi index.html
+    AllowOverride All
+    Require all granted
+</Directory>
+
+=================================================================================
+
+
+Add below line in my.ini
+
+ft_min_word_len=2
+------------------------------------------------
+make
+
+max_allowed_packet=16M
+
+====================================================================================
+You must create a key in the Windows registry
+------------------------------------------
+HKEY_CLASSES_ROOT\.cgi\Shell\ExecCGI\Command 
+
+    ADD with the default value pointing to the full path of perl.exe with a -T parameter
+   
+   C:\Strawberry\perl\bin\perl.exe -T
