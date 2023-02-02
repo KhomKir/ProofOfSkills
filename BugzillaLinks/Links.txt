@@ -1,0 +1,1 @@
+http://localhost/bugzilla/show_bug.cgi?id=1

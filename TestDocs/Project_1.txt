@@ -1,0 +1,87 @@
+Energy-Telecom Service Review
+http://www.energy-telecom.portnov.com/qa/
+
+Specific Data Requirements:
+
+	City:
+- text field
+- accepts all characters
+- No more than 50
+- Required field
+
+Test Cases
+ID		Title			Instruction			Expected result
+#1	Field accepts all characters	New York 15%			accepted
+#2	Max input			provide 50 characters		accepted
+#3	Max input + 1 character		provide 51 characters		accepted 50 characters
+#4	Paste Max input + 1 character	paste 51 characters		accepted 50 characters
+#5 	Required field			Empty field			"Please enter your City" error message
+
+
+
+	State:
+- List Box offering the list of all 50 states
+- Required field.
+
+Test Cases
+ID		Title			Instruction				Expected result
+#1	All 50 states in list box	Open list box and verify all states	All 50 states in list box
+#2 	Required field			Empty field				"Please enter your State" error message
+
+
+
+	Email:
+- text field
+- accepts letters, digits, some special characters (– @ . – _ )
+- 255 characters
+- Required field. 
+
+Test Cases
+ID		Title			Instruction				Expected result
+#1	accepts letters, digits, 	Abc123#/-_=@mail.bu			accepted
+	some special characters
+#2	Max input			provide 255 characters			accepted
+#3	Max input + 1 character		provide 256 characters			accepted 255 characters
+#4	Paste Max input + 1 character	paste 256 characters			accepted 255 characters
+#5 					"Please enter your City" error message	
+
+
+
+	Phone:
+- 3 text fields
+- accepting 3-3-4 chars
+- digits only
+- Required field
+
+Test Cases
+ID		Title			Instruction				Expected result
+#1	accepting 3-3-4 chars		provide 888-777-9999			accepted
+#2	provide more than 3-3-4 chars	provide 8888-7777-99999			accepted 3-3-4 chars
+#3	digits only			provide	8#v-7@d-99>x			accepted digits only
+#4	digits only			pste 8#v-7@d-99>x			accepted digits only
+#5	Required field			Empty field				"Please enter your Phone numbe" error message	
+			
+
+
+
+Bug reports:
+#1 "City" field accepts 50 characters instead 51 as per Requirements
+#2 "State": provide state of Hawaii in list box
+#3 "State": provide state of Nevada in list box
+#4 "State": British Columbia (BC) is province of Canada not state of USA
+#5 "State": "Other" row in list box is unnecessary
+#6 "State": List box don't calculate county by ZIP code
+#7 "Email": incomplete requirement "... some special characters", which specific characters can be accepted?
+#8 "Email": field accepted any special characters, except "_"
+#9 "Email": field accepted more than 255 characters
+#10 "Email": Empty field accepted by application, but it's riquired to be entered
+#11 Confusing/misleading error message when user pushes the "Clear" button
+#12 "Referred by": there is no information in the requirement on the field being/not being a required field
+#13 "Referred by": inconsistency between the field not having the asterisk, but being proceseed as a required fiel
+#14 "Email": inconsistency between the field having the asterisk, but being proceseed as a unrequired fiel, and asterisk is blue colour
+#15 Incorrect TAB order; after "First name" active field is "Refered by"
+#16 "State": "IND" inconsistance to others. Provide "IN"
+#17 Controls "Submit" and "Clear" are inconsistance by size and font
+#18 Inconsistancy in the textlabel "Local/Long Distances/International Service": labels 7th and 8th ended by
+special character "?" instead ":" like others
+#19 "Phone": field accept special characters and letters by paste
