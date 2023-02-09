@@ -1,0 +1,28 @@
+Test 1: Search Functionality Test
+
+# Importing the necessary modules
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initializing the webdriver
+driver = webdriver.Firefox()
+
+# Opening the website
+driver.get("https://www.sports.ru/")
+
+# Finding the search bar
+search_bar = driver.find_element_by_id("header-search-input")
+
+# Entering a search query
+search_bar.send_keys("Football")
+search_bar.send_keys(Keys.RETURN)
+
+# Waiting for the page to load
+time.sleep(3)
+
+# Verifying if the correct page is loaded
+assert "Football" in driver.title
+
+# Closing the browser
+driver.close()

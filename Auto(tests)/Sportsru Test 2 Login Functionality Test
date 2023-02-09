@@ -1,0 +1,41 @@
+Test 2: Login Functionality Test
+
+# Importing the necessary modules
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initializing the webdriver
+driver = webdriver.Firefox()
+
+# Opening the website
+driver.get("https://www.sports.ru/")
+
+# Finding the login button
+login_button = driver.find_element_by_id("header-enter")
+
+# Clicking on the login button
+login_button.click()
+
+# Waiting for the page to load
+time.sleep(3)
+
+# Finding the username and password fields
+username = driver.find_element_by_id("header-modal-enter-login")
+password = driver.find_element_by_id("header-modal-enter-password")
+
+# Entering the username and password
+username.send_keys("your_username")
+password.send_keys("your_password")
+
+# Submitting the form
+password.send_keys(Keys.RETURN)
+
+# Waiting for the page to load
+time.sleep(3)
+
+# Verifying if the user is logged in
+assert "Личный кабинет" in driver.page_source
+
+# Closing the browser
+driver.close()

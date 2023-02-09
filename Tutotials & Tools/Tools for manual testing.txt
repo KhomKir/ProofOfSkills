@@ -17,3 +17,5 @@ Code Review Tools: Crucible, Phabricator, etc.
 Cross-Browser Testing Tools: BrowserStack, Sauce Labs, etc.
 
 Mobile Testing Tools: Appium, MonkeyTalk, etc.
+
+Postman, Jmeter, Robotframework, Selenium, Appium, Page Object Model, Test Pyramid, Bamboo CI, Jira, Git, Docker, Elasticsearch

@@ -55,3 +55,12 @@ HKEY_CLASSES_ROOT\.cgi\Shell\ExecCGI\Command
     ADD with the default value pointing to the full path of perl.exe with a -T parameter
    
    C:\Strawberry\perl\bin\perl.exe -T
+
+========================================================================================
+<role rolename="manager-gui"/>
+  	<role rolename="manager-script"/>
+  	<role rolename="manager-jmx"/>
+	<role rolename="manager-status"/>
+  	<user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+  	<user username="deployer" password="deployer" roles="manager-script"/>
+  	<user username="tomcat" password="s3cret" roles="manager-gui"/>
