@@ -1,0 +1,62 @@
+Тест для API sobank.online
+
+1. POST запрос через Postman:
+	Создать коллекцию "sobank.online"
+	Создать POST запрос:
+	URL: https://sobank.online/credit_card/info
+	body/raw(JSON):
+	{
+    "credit_target": {
+        "value": "credit_card",
+        "title": "Кредитная карта"
+    },
+    "credit_sum": "130 000",
+    "name": "James",
+    "surname": "Deen",
+    "patronymic": "Jr",
+    "email": "jamesdeen@example.com",
+    "phone_number": "+1234567890",
+    "gender": {
+        "value": "MALE",
+        "title": "Мужской"
+    }
+	}
+	SAVE/SEND
+	or
+	3.2 POST запрос с созданием переменных в коллекции:
+	VARIABLES:
+	"name": "James",
+	"surnamy": "Deen",
+	"patronymic": "Jr",
+    	"email": "jamesdeen@example.com",
+    	"phone number": "+1234567890",
+    	POST Params:
+    	name={{name}}
+	surname={{surname}}
+	patronymic={{patronymic}}
+    	email={{email}}
+    	phone number={{phone number}}
+    	https://sobank.online/api/form/create/auth_info?name={{name}}&surname={{surname}}&patronymic={{patronymic}}&email={{email}}&phone number={{phone number}}
+    	SAVE/SEND
+
+
+2. Автотест для API (для одного двух полей)
+Создадим тест, что в ответе на запрос содержится код 200 и имя, переданное в теле запроса.
+В запросе POST "New Request with params" в "tests" внесем следующие сниппеты:
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Check name", function () {
+    pm.expect(pm.response.json().name).to.equal(pm.collectionVariables.get("name"));
+});
+SAVE/SEND
+or
+В запросе POST "New Request with body" в "tests" внесем следующие сниппеты:
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Check name", function () {
+    pm.expect(pm.response.json().name).to.equal(pm.request.body.raw("name"));
+});
+or
+RUN из коллекции.
